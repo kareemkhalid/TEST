@@ -2,14 +2,35 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Gompatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width", initial-scale=1">
-		<title>Boostrap Starter Page</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/styles.css">
+   	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>David Chau's China Bistro</title>
+    	<link rel="stylesheet" href="css/bootstrap.min.css">
+    	<link rel="stylesheet" href="css/styles.css">
+    	<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Hello: </h1>
+		<header>
+			<nav id="header-nav" class="navbar navbar-default">
+				<div class="container">
+					<! for better mobile display,  https://getbootstrap.com/docs/3.3/components/#navbar !>
+					<div class="navbar-header"> 
+						<a href="index.html" class="pull-left"><!in my case it was not coming down in stacked form!>
+							<div id="logo-img" alt="logo image"></div>
+						</a>
+					</div>
+
+					<div class="navbar-band">
+						<a href="index.html"><h1>David Chu's China Bistro</h1></a>
+						<p>
+						  <img src="star-k-logo.png" alt="Kosher Certification">								
+						</p>
+						<span>Kosher Certified</span>
+				</div>
+			</nav>
+		</header>
+
+
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/script.js"></script>
