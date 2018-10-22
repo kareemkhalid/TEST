@@ -8,31 +8,81 @@
     	<link rel="stylesheet" href="css/bootstrap.min.css">
     	<link rel="stylesheet" href="css/styles.css">
     	<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	</head>
 	<body>
 		<header>
 			<nav id="header-nav" class="navbar navbar-default">
 				<div class="container">
-					<! for better mobile display,  https://getbootstrap.com/docs/3.3/components/#navbar !>
+	<!--for better mobile display,  https://getbootstrap.com/docs/3.3/components/#navbar-->
 					<div class="navbar-header"> 
-						<a href="index.html" class="pull-left"><!in my case it was not coming down in stacked form!>
+						<a href="index.html" class="pull-left visible-md visible-lg">
+	<!--in my case it was OK but if is below to the nav tab in stacked form!, in bootstrap the name of this class ="navbar-brand", pull left is equivalemt to float left. if we push our logo to the left , hotel name will adjust easily,visble is used to restrict the logo appear in mobile view-->
 							<div id="logo-img" alt="logo image"></div>
 						</a>
-					</div>
+					
 
-					<div class="navbar-band">
-						<a href="index.html"><h1>David Chu's China Bistro</h1></a>
-						<p>
-						  <img src="star-k-logo.png" alt="Kosher Certification">								
-						</p>
-						<span>Kosher Certified</span>
-				</div>
-			</nav>
+						<div class="navbar-brand">
+	<!--bootstrap default method-->
+							<a href="index.html"><h1>David Chu's China Bistro</h1></a>
+							<p>
+						 		<img src="js/star-k-logo.png" alt="Kosher Certification">	
+						  		<span>Kosher Certified</span>					
+							</p>
+						</div>
+				
+
+	<!-- class="navbar-toggle is used to control the positioning of the whole botton,giving us positioning and styling simultaneously-->
+  <!-- responsible for the menu button icon-->
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+	<!--data-target is given an id to operate button-->
+            				<span class="sr-only">Toggle navigation</span>
+  <!-- following icon-bar is used to draw the three horizontal lines in menu collapsed icon  -->            
+            				<span class="icon-bar"></span>
+            				<span class="icon-bar"></span>
+            				<span class="icon-bar"></span>
+          				</button>
+          			</div>
+     <!-- id="collapsable-nav is showing that in above at line36 we used an API data-target="#collapsable-nav" , buttons will search in program which target should be collapsed, by showing declaring id="collapsable-nav" , we are giving isntructins that this div is needed to be collapsed. -->
+     <!--class="collapse navbar-collapse is the requireemnt of boostrap-->
+                         <div id="collapsable-nav" class="collapse navbar-collapse">
+     <!--the way we are able to show menu is very common to use the unordered list, we are giving it an id of #nav-list to target the styling --> <!-- we define few clases .nav .navbar-nav to show that they are the component of the navigation bar and these are class which will turn our unordered list into nicely looking menus these two classes are also defult in boostrap-->
+     <!-- next class is .navbar right to turn all menu items to float to right as required in capture image. -->                        
+                              <ul id="nav-list" class="nav navbar-nav navbar-right">
+                                   <li>
+     <!-- in list items we mostly points towards  the html page(mostly inside the page) , We named ts Menu as required by the client -->                   <!-- a span tag is added to show the vector based image gyyphicone,whose shap is same as that of the default boostrap, we have to wrap the icon in class to make it visible-->  
+     <!-- we added br to ensure that menu and icon appear in two lines -->   
+     <!-- we want to disappear the cutlery sign as screen size get extrasmall(XS) for this , we introduce a .hidden-xs wrapped in break -->                 
+                                        <a href="menu-categories.html">
+                                             <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs">Menu</a>                                    
+                                   </li>
+
+                                   <li>
+                                        <a href="#">
+                                             <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs">About</a>
+                                   </li>
+
+                                   <li>
+                                        <a href="#">
+                                             <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs">Awards</a>
+                                   </li>
+     <!-- we want to hide the all thing which is wrapped in <li> when view is extra small or mobile all things from l70 to l71 will be invisible , because we want in moble to show in center in full display-->                              
+                                   <li id="phone" class="hidden-xs">
+     <!-- following format will trigger the inbuilt system to call if available in desktop or mobile -->                                   
+                                        <a href=""tel:410-602-5008"">
+                                             <span>410-602-5008</span></a><div>* We Deliver</div>     
+                                   </li>
+
+                              </ul><!-- #nav-list--> 
+                         </div><!-- .collapse .navbar-collapse-->
+          		</div><!-- .container -->	
+			</nav><!-- #header-nav-->
 		</header>
 
-
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/script.js"></script>
+		 <!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
 	</body>
 </html>
+<!-- In this we added menu tab and gliphicons  -->
